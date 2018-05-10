@@ -28,3 +28,10 @@ while(index < keys['length']){
     }
     index = index + 1;
 }
+
+document.onkeypress = function (listener) {
+    key = listener['key'];
+    website = hash[key];
+    // location.href = 'http://'+website
+    window.open('http://'+website,'_blank')
+};
