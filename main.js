@@ -23,7 +23,17 @@ while(index < keys['length']){
     while (index2 < row['length']){
         Z = document.createElement('kbd');
         Z.textContent = row[index2];
+        button = document.createElement('button');
+        Z.appendChild(button);
+        button.textContent = '编辑';
+        button.id = row[index2];//button是个容器
+        button.onclick = function (Q) {
+          o = Q.target.id;
+          p = prompt('给我一个网址');
+          hash[o] = p ;
+        };
         Y.appendChild(Z);
+
         index2 ++ ;
     }
     index = index + 1;

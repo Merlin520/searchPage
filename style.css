@@ -13,7 +13,20 @@ kbd {
     height: 4em;
     display: inline-block;
     text-transform: uppercase;/*小写变大写*/
+    position: relative;
 }
+
+kbd > button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+kbd:hover > button {
+    display: inline-block;
+}
+
 
 /*#X {*/
     /*display: inline-block;*/
