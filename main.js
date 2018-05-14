@@ -12,7 +12,10 @@ var hash = {
     b:'baidu.com'
 };
 
-
+var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz'));
+if(hashInLocalStorage){
+    hash = hashInLocalStorage;
+}
 
 index = 0;
 while(index < keys['length']){
@@ -31,6 +34,7 @@ while(index < keys['length']){
           o = Q.target.id;
           p = prompt('给我一个网址');
           hash[o] = p ;
+          localStorage.setItem('zzz',JSON.stringify(hash))
         };
         Y.appendChild(Z);
 
