@@ -12,7 +12,7 @@ var hash = {
     b:'baidu.com'
 };
 
-var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz'));
+var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null');
 if(hashInLocalStorage){
     hash = hashInLocalStorage;
 }
