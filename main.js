@@ -19,15 +19,16 @@ if(hashInLocalStorage){
 
 index = 0;
 while(index < keys['length']){
-    Y = document.createElement('div');
-    X.appendChild(Y);
+    div = document.createElement('div');
+    main.appendChild(div);
     row = keys[index];
     index2 = 0;
     while (index2 < row['length']){
-        Z = document.createElement('kbd');
-        Z.textContent = row[index2];
+        kbd = document.createElement('kbd');
+        kbd.textContent = row[index2];
+        kbd.className = 'key';
         button = document.createElement('button');
-        Z.appendChild(button);
+        kbd.appendChild(button);
         button.textContent = '编辑';
         button.id = row[index2];//button是个容器
         button.onclick = function (Q) {
@@ -36,7 +37,7 @@ while(index < keys['length']){
           hash[o] = p ;
           localStorage.setItem('zzz',JSON.stringify(hash))
         };
-        Y.appendChild(Z);
+        div.appendChild(kbd);
 
         index2 ++ ;
     }
