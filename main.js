@@ -26,20 +26,31 @@ while(index < keys['length']){
     index2 = 0;
     while (index2 < row['length']){
         kbd = document.createElement('kbd');
-        kbd.textContent = row[index2];
+        span = document.createElement('span');
+        span.textContent = row[index2];
+        kbd.appendChild(span);
         kbd.className = 'key';
+        span.className = 'text';
         button = document.createElement('button');
         kbd.appendChild(button);
         button.textContent = '编辑';
         button.id = row[index2];//button是个容器
+        img = document.createElement('img');
+        if(hash[row[index2]]){
+            img.src = 'http://'+hash[row[index2]]+'/favicon.ico';
+        }else {
+            img.src = './qq.jpg'
+        }
+
         button.onclick = function (Q) {
           o = Q.target.id;
           p = prompt('给我一个网址');
           hash[o] = p ;
           localStorage.setItem('zzz',JSON.stringify(hash))
         };
+        kbd.appendChild(img);
+        kbd.appendChild(button);
         div.appendChild(kbd);
-
         index2 ++ ;
     }
     index = index + 1;

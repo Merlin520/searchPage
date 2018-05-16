@@ -67,10 +67,16 @@ main {
     border: 1px solid #373737;
     border-radius: 8px;
     box-shadow: 0 0 0 1px #1A1B1C,0 0 0 2px #1F2020,0 3px 0 2px #080808;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     font-size: 18px;
+    position: relative;
+}
+
+.key img {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 4px;
+    bottom: 2px;
 }
 
 .row {
@@ -79,4 +85,10 @@ main {
 
 .row .key {
     margin: 0 8px;
+}
+
+.key .text {
+    position: absolute;
+    left:4px;
+    top: 2px;
 }
