@@ -20,6 +20,7 @@ if(hashInLocalStorage){
 index = 0;
 while(index < keys['length']){
     div = document.createElement('div');
+    div.className = 'row';
     main.appendChild(div);
     row = keys[index];
     index2 = 0;
