@@ -42,11 +42,21 @@ while(index < keys['length']){
             img.src = './qq.jpg'
         }
 
+        img.onerror = function (xxx) {
+            xxx.target.src = './qq.jpg'
+        };
+
         button.onclick = function (Q) {
-          o = Q.target.id;
-          p = prompt('给我一个网址');
-          hash[o] = p ;
-          localStorage.setItem('zzz',JSON.stringify(hash))
+            button2 = Q['target'];
+            img2 = button2.previousSibling
+            o = Q.target.id;
+            p = prompt('给我一个网址');
+             hash[o] = p ;
+             img2.src = 'http://'+p+'/favicon.ico';
+             img2.onerror = function (xxx) {
+                xxx.target.src = './qq.jpg'
+            };
+            localStorage.setItem('zzz',JSON.stringify(hash))
         };
         kbd.appendChild(img);
         kbd.appendChild(button);
